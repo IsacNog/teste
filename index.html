@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sim ou não?</title>
+</head>
+<body>
+    
+<main>
+    <div class="container">
+        <h1 class="container__titulo">O Isac é o melhor programador de todos?</h1>
+        <div class="container__buttons">
+            <button class="container__btn" id="btn-sim">Sim</button>
+            <button class="container__btn" id="btn-nao" onclick="isac()">Não</button>
+        </div>
+    </div>
+</main>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(45deg, blue, purple, darkblue, purple);
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 3rem;
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 16px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__titulo {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: lightgray;
+}
+
+.container__btn {
+    padding: 1rem;
+    border: solid 2px;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    margin: 24px;
+}
+
+@media screen and (max-width: 347px){
+     .container__btn {
+        margin: 6px;
+     }
+     .container {
+        width: 60%;
+     }
+}
+    </style>
+
+    <script>
+
+    let btnNao = document.querySelector('#btn-nao');
+
+    let max1 = parseInt(Math.random() * 170);
+    let max2 = parseInt(Math.random() * 170);
+    let min1 = parseInt(Math.random() * -170);
+    let min2 = parseInt(Math.random() * -170);
+
+    function isac(){
+
+        let num1 = parseInt(Math.random() * (max2 - min2) + min2)
+
+        let num2 = parseInt(Math.random() * (max1 - min1) + min1)
+
+        btnNao.style.transform = `translate( ${num1}px, ${num2}px)`
+        console.log(`${num1}, ${num2}`);
+    }
+
+    let btnSim = document.querySelector('#btn-sim');
+
+    btnSim.addEventListener('click', function(){
+        alert('Exatamente! é claro que sou kkk');
+
+    });
+
+    </script>
+</body>
+</html>
